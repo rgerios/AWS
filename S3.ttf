@@ -1,0 +1,29 @@
+resource "aws_s3_bucket" "rgerios-desafio" {
+  bucket = "lab-localiza-desafio"  # Nome único para o bucket
+
+  website {
+    index_document = "index.html"  # Arquivo principal do seu site
+    error_document = "error.html"  # Página de erro
+  }
+}
+
+resource "aws_s3_bucket_policy" "bucket_policy" {
+  bucket = aws_s3_bucket.rgerios-desafio.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Action = "s3:GetObject",
+        Effect = "Allow",
+        Resource = "${aws_s3_bucket.rgerios-desafio.arn}/*",
+        Principal = "*"
+      }
+    ]
+  })
+}
+
+output "website_url" {
+  value = aws_s3_bucket.rgerios-desafio.website_endpoint
+  description = "URL do site estático"
+}

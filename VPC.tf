@@ -1,6 +1,6 @@
 # Criação da VPC
 resource "aws_vpc" "VPC-Lab-PRD" {
-  cidr_block       = "10.12.0.0/16"
+  cidr_block           = "10.12.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
   tags = {
@@ -37,12 +37,12 @@ resource "aws_route_table_association" "public_rta" {
 
 # Subnets Públicas
 resource "aws_subnet" "public_subnets" {
-  count = 3
-  vpc_id            = aws_vpc.VPC-Lab-PRD.id
-  cidr_block        = cidrsubnet(aws_vpc.VPC-Lab-PRD.cidr_block, 3, count.index)
+  count                   = 3
+  vpc_id                  = aws_vpc.VPC-Lab-PRD.id
+  cidr_block              = cidrsubnet(aws_vpc.VPC-Lab-PRD.cidr_block, 3, count.index)
   map_public_ip_on_launch = true
-  availability_zone = element(["us-east-1a", "us-east-1b", "us-east-1c"], count.index)
-  
+  availability_zone       = element(["us-east-1a", "us-east-1b", "us-east-1c"], count.index)
+
   tags = {
     Name = "SN-PUB-${count.index + 1}"
   }
@@ -50,11 +50,11 @@ resource "aws_subnet" "public_subnets" {
 
 # Subnets Privadas
 resource "aws_subnet" "private_subnets" {
-  count = 3
+  count             = 3
   vpc_id            = aws_vpc.VPC-Lab-PRD.id
   cidr_block        = cidrsubnet(aws_vpc.VPC-Lab-PRD.cidr_block, 3, count.index + 3)
   availability_zone = element(["us-east-1a", "us-east-1b", "us-east-1c"], count.index)
-  
+
   tags = {
     Name = "SN-PRIV-${count.index + 1}"
   }
