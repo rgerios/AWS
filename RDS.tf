@@ -33,4 +33,10 @@ resource "aws_db_parameter_group" "postgresql_param_group" {
     name  = "work_mem"
     value = "65536"  # Exemplo de ajuste de memória
   }
+
 }
+
+output "rds_endpoint" {
+  value = aws_db_instance.postgres.endpoint
+}
+
