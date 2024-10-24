@@ -6,6 +6,6 @@ resource "aws_route53_zone" "private_zone" {
   }
   comment = "Zona Privada para minha VPC"
   tags = {
-    Name = "private-zone"
+    Name = "Zona Privada Lab"
   }
 }
