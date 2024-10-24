@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "rogerio-lab-localiza" {
   bucket = "rogerio-lab-localiza" # substitua pelo nome desejado para o bucket (nome único global)
- # acl    = "public-read"          # define o bucket como publicamente legível
+  # acl    = "public-read"          # define o bucket como publicamente legível
 
   tags = {
     Name        = "rogerio-lab-localiza"
