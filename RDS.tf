@@ -1,9 +1,9 @@
 resource "aws_db_instance" "postgres" {
   allocated_storage      = var.allocated_storage
   engine                 = "postgres"
-  #engine_version         = "13.4" # Você pode escolher a versão que preferir
+  #identifier             = db-lab-desafio
   instance_class         = var.db_instance_class
-  db_name                = var.db_name
+  identifier                = var.db_name
   username               = var.db_user
   password               = var.db_password
   parameter_group_name   = "postgresql-parameter-group"
@@ -21,17 +21,17 @@ resource "aws_db_subnet_group" "SubNetGroupRDS" {
 # Parameter Group para RDS PostgreSQL
 resource "aws_db_parameter_group" "postgresql_param_group" {
   name        = "postgresql-parameter-group"
-  family      = "postgres16"  # Altere para a versão do PostgreSQL desejada
+  family      = "postgres16" # Altere para a versão do PostgreSQL desejada
   description = "Custom parameter group for PostgreSQL"
 
   parameter {
     name  = "log_min_duration_statement"
-    value = "5000"  # Configuração personalizada, por exemplo: logar queries acima de 5s
+    value = "5000" # Configuração personalizada, por exemplo: logar queries acima de 5s
   }
 
   parameter {
     name  = "work_mem"
-    value = "65536"  # Exemplo de ajuste de memória
+    value = "65536" # Exemplo de ajuste de memória
   }
 
 }
