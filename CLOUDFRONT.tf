@@ -12,6 +12,9 @@ resource "aws_cloudfront_distribution" "cdn" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
 
+  # Associando a Web ACL
+  web_acl_id = aws_wafv2_web_acl.web_acl.arn
+
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
@@ -52,4 +55,3 @@ resource "aws_cloudfront_distribution" "cdn" {
 resource "aws_cloudfront_origin_access_identity" "oai" {
   comment = "Acesso CloudFront ao S3"
 }
-
