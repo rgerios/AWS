@@ -1,7 +1,7 @@
 resource "aws_cloudfront_distribution" "cdn" {
   origin {
     domain_name = aws_s3_bucket.static_site.bucket_regional_domain_name
-    origin_id   = "S3-${aws_s3_rogerio-lab-localiza.id}"
+    origin_id   = "S3-${aws_s3_bucket.static_site.id}"
 
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
@@ -53,7 +53,3 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
   comment = "Acesso CloudFront ao S3"
 }
 
-output "cloudfront_url" {
-  value       = aws_cloudfront_distribution.cdn.domain_name
-  description = "URL do site via CloudFront"
-}

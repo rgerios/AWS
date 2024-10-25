@@ -1,9 +1,9 @@
 resource "aws_db_instance" "postgres" {
-  allocated_storage      = var.allocated_storage
-  engine                 = "postgres"
+  allocated_storage = var.allocated_storage
+  engine            = "postgres"
   #identifier             = db-lab-desafio
   instance_class         = var.db_instance_class
-  identifier                = var.db_name
+  identifier             = var.db_name
   username               = var.db_user
   password               = var.db_password
   parameter_group_name   = "postgresql-parameter-group"
@@ -36,7 +36,5 @@ resource "aws_db_parameter_group" "postgresql_param_group" {
 
 }
 
-output "rds_endpoint" {
-  value = aws_db_instance.postgres.endpoint
-}
+
 
