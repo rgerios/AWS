@@ -3,40 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Nomes</title>
+    <title>Apresentação Pessoal</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
             color: #333;
         }
-        input {
-            padding: 10px;
-            width: 300px;
-            margin-right: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
+
+        header {
+            background: #4CAF50;
             color: white;
-            border: none;
-            cursor: pointer;
+            padding: 20px 0;
+            text-align: center;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        header h1 {
+            font-size: 2.5rem;
         }
-        #result {
-            margin-top: 20px;
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills {
+            margin: 40px 0;
+        }
+
+        .skills h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .skill-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill h3 {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .contact {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            font-size: 1.1rem;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .contact a:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .skill {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Consultar Nome</h1>
+    <header>
+        <h1>Desafio Stack Infraestrutura Terraform</h1>
+    </header>
+
+    <div class="container">
+        <!-- Seção de Introdução -->
+        <section class="about">
+            <h2>Sobre o Desafio</h2>
+            <p>
+                Desafio consiste em montar uma Infraestrutura baseada em terraform ao máximo possível para a maior utilização 
+                de IaC.
+            </p>
+        </section>
+
+        <h1>Consultar Nome</h1>
     <input type="text" id="nameInput" placeholder="Digite um nome">
     <button onclick="searchName()">Consultar</button>
 
@@ -63,6 +174,19 @@
                 });
         }
     </script>
+
+        <!-- Seção de Contato -->
+        <section class="contact">
+            <h2>Entre em Contato</h2>
+            <p>Qualquer duvida, estou à disposição.</p>
+            <a href="mailto:rgerios@live.com">Fale Comigo</a>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Rogério. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
