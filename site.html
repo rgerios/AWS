@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação Pessoal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills {
+            margin: 40px 0;
+        }
+
+        .skills h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .skill-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill h3 {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .contact {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            font-size: 1.1rem;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .contact a:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .skill {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo ao Meu Site de Apresentação</h1>
+    </header>
+
+    <div class="container">
+        <!-- Seção de Introdução -->
+        <section class="about">
+            <h2>Sobre Mim</h2>
+            <p>
+                Olá! Eu sou um desenvolvedor apaixonado por tecnologia, especializado em criação de sites e aplicativos web.
+                Com anos de experiência em desenvolvimento front-end e back-end, estou sempre em busca de novos desafios e oportunidades
+                para melhorar minhas habilidades. Adoro transformar ideias em soluções práticas e eficientes.
+            </p>
+        </section>
+
+        <!-- Seção de Habilidades -->
+        <section class="skills">
+            <h2>Minhas Habilidades</h2>
+            <div class="skill-list">
+                <div class="skill">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>
+                        HTML, CSS, JavaScript, React, Angular – crio interfaces atraentes e funcionais, sempre focado em experiência do usuário.
+                    </p>
+                </div>
+                <div class="skill">
+                    <h3>Desenvolvimento Backend</h3>
+                    <p>
+                        Node.js, Python, Ruby on Rails, APIs REST – programação robusta para sistemas escaláveis e eficientes.
+                    </p>
+                </div>
+                <div class="skill">
+                    <h3>DevOps e Cloud</h3>
+                    <p>
+                        AWS, Docker, Kubernetes – otimização de infraestruturas, com foco em automação, segurança e escalabilidade.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section class="contact">
+            <h2>Entre em Contato</h2>
+            <p>Se você tem interesse em discutir um projeto ou colaborar, estou à disposição.</p>
+            <a href="mailto:seuemail@email.com">Fale Comigo</a>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Meu Nome. Todos os direitos reservadosssss.</p>
+    </footer>
+
+</body>
+</html>
