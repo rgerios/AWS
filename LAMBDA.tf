@@ -1,9 +1,9 @@
 resource "aws_lambda_function" "lambda_rds_query" {
-  filename         = "lambda_rds_query.zip"  # Caminho para o arquivo zipado da Lambda
-  function_name    = "RDSQueryLambda"
-  role             = aws_iam_role.lambda_exec_role.arn
-  handler          = "index.handler"
-  runtime          = "nodejs20.x"
+  filename      = "lambda_rds_query.zip" # Caminho para o arquivo zipado da Lambda
+  function_name = "RDSQueryLambda"
+  role          = aws_iam_role.lambda_exec_role.arn
+  handler       = "index.handler"
+  runtime       = "nodejs20.x"
 
   environment {
     variables = {
@@ -27,8 +27,8 @@ resource "aws_iam_role" "lambda_exec_role" {
     Version = "2012-10-17",
     Statement = [
       {
-        Action    = "sts:AssumeRole",
-        Effect    = "Allow",
+        Action = "sts:AssumeRole",
+        Effect = "Allow",
         Principal = {
           Service = "lambda.amazonaws.com"
         }
@@ -38,13 +38,13 @@ resource "aws_iam_role" "lambda_exec_role" {
 
   # Policy to allow Lambda to create and manage network interfaces in EC2
   inline_policy {
-    name   = "LambdaEC2NetworkInterfacePolicy"
+    name = "LambdaEC2NetworkInterfacePolicy"
     policy = jsonencode({
       Version = "2012-10-17",
       Statement = [
         {
-          Effect   = "Allow",
-          Action   = [
+          Effect = "Allow",
+          Action = [
             "ec2:CreateNetworkInterface",
             "ec2:DescribeNetworkInterfaces",
             "ec2:DeleteNetworkInterface"
@@ -64,7 +64,7 @@ resource "aws_iam_role_policy" "lambda_policy" {
     Version = "2012-10-17",
     Statement = [
       {
-        Action   = [
+        Action = [
           "rds:DescribeDBInstances",
           "rds-db:connect"
         ],
